@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{   int n, i, delitel, temp, zbir, najgolem=0,fleg=0,broj;
+    scanf("%d",&n);
+
+    for(i=1; i<=n; i++)
+    {
+        temp = i;
+        zbir = 0;
+        for(delitel = 1; delitel < n; delitel++)
+        {
+            if (temp % delitel == 0)
+            {
+               zbir = zbir+delitel;
+               if(zbir>fleg)
+               {
+                   fleg=zbir;
+                   broj=i;
+               }
+            }
+        }
+    }
+    printf("%d\n", broj);
+    return 0;
+    }
