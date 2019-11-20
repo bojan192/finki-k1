@@ -1,0 +1,90 @@
+#include <stdio.h>
+int main() {
+    int broj, c1=0,c2=0, temp, rez, pog, pom;
+ 
+ 
+    while(scanf("%d", &broj)) {
+        temp=broj;
+ 
+        if(broj<=10) {
+            continue;
+        }
+        c1=broj%10;
+        rez=0;
+ 
+        if(c1<5) {
+            pom=1;
+            pog=0;
+ 
+            while(broj>0) {
+                c2=broj%10;
+                if(pom) {
+                    if(c2<5) {
+                        pog=1;
+                        pom=0;
+                        broj/=10;
+                        continue;
+                    } else {
+                        rez=1;
+                        break;
+                    }
+                }
+ 
+                if(pog) {
+                    if(c2>=5) {
+                        pog=0;
+                        pom=1;
+                        broj/=10;
+                        continue;
+                    } else {
+                        rez=1;
+                        break;
+                    }
+                }
+            }
+        }
+ 
+        if(c1>=5) {
+            pog=1;
+            pom=0;
+ 
+            while(broj>0) {
+                c2=broj%10;
+ 
+                if(pog) {
+                    if(c2>=5) {
+                        pom=1;
+                        pog=0;
+                        broj/=10;
+                        continue;
+                    } else {
+                        rez=1;
+                        break;
+                    }
+                }
+ 
+                if(pom) {
+                    if(c2<5) {
+                        pog=1;
+                        pom=0;
+                        broj/=10;
+                        continue;
+                    } else {
+                        rez=1;
+                        break;
+                    }
+                }
+ 
+            }
+ 
+ 
+        }
+ 
+        if(rez!=1)
+            printf("%d\n", temp);
+ 
+ 
+    }
+    return 0;
+ 
+}
