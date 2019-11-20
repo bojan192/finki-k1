@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main () {
+    int b,zbir=0;
+    char w;
+    while(1){
+    if (w=='.')
+    {
+        break;
+    }
+    scanf("%c",&w);
+    if ((w>='A')&&(w<='F'))
+    {
+     switch (w)
+        {
+            case 'A':zbir=zbir+10; break;
+            case 'B':zbir=zbir+11; break;
+            case 'C':zbir=zbir+12; break;
+            case 'D':zbir=zbir+13; break;
+            case 'E':zbir=zbir+14; break;
+            case 'F':zbir=zbir+15; break;
+    }
+    }
+    else if ((w>='a')&&(w<='f'))
+    {
+     switch (w)
+        {
+            case 'a':zbir=zbir+10; break;
+            case 'b':zbir=zbir+11; break;
+            case 'c':zbir=zbir+12; break;
+            case 'd':zbir=zbir+13; break;
+            case 'e':zbir=zbir+14; break;
+            case 'f':zbir=zbir+15; break;
+    }
+    }
+    else if ((w>='0')&&(w<='9'))
+    {
+        switch (w)
+        {
+            case '0':zbir=zbir+0; break;
+            case '1':zbir=zbir+1; break;
+            case '2':zbir=zbir+2; break;
+            case '3':zbir=zbir+3; break;
+            case '4':zbir=zbir+4; break;
+            case '5':zbir=zbir+5; break;
+            case '6':zbir=zbir+6; break;
+            case '7':zbir=zbir+7; break;
+            case '8':zbir=zbir+8; break;
+            case '9':zbir=zbir+9; break;
+        }
+    }
+    }
+    if (zbir==16)
+    {
+        printf("Poln pogodok");
+        return 0;
+    }
+    if(zbir%16==0)
+    {
+        printf("Pogodok");
+        return 0;
+    }
+    printf("%d",zbir);
+  return 0;
+}
